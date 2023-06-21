@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: example
+spec:
+  template:
+    spec:
+      serviceAccountName: httpd
+      containers:
+        - name: httpd
+          image: docker.io/httpd:2.4
+          ports:
+            - containerPort: 80
+              name: http
